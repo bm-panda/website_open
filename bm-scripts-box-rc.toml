@@ -1,0 +1,29 @@
+[bmscriptsbox]
+
+[bmscriptsbox.info]
+id = "4fd59536-dea6-4768-aa03-0749abef9b69"
+name = "网页快开"
+desc = "在盒子搜索框里输入或粘贴网址，选中本脚本即可用系统默认浏览器直接打开"
+version = "1.0.0"
+icon = "./imgs/logo.png"
+
+[bmscriptsbox.runtime]
+language = "powershell"
+language_version = ">=5.1"
+entry = "main.ps1"
+terminal = "auto"
+
+[[bmscriptsbox.inputs]]
+name = "url"
+type = "str"
+description = "要打开的网址（由搜索框内容填入）"
+
+[bmscriptsbox.triggers.search]
+enabled = true
+
+[[bmscriptsbox.triggers.search.match]]
+kind = "url"
+
+[[bmscriptsbox.triggers.search.match]]
+kind = "text"
+prefix = "www."
